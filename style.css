@@ -8,3 +8,34 @@ License: GNU General Public License v2
 License URI: <https://www.gnu.org/licenses/gpl-2.0.html>
 Text Domain: kinkajou
 */
+
+.main-window {
+  width: auto;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.post-board {
+  height: 100%;
+  display: flex;
+  flex-flow: column wrap;
+  float: left;
+}
+
+.post-index div {
+  display: block;
+  margin: 1vh;
+  height: 28%;
+}
+
+.post-index a {
+
+}
+
+.post-index img {
+}
+
+.post-index p {
+}
+
+
