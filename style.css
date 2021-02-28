@@ -1,5 +1,12 @@
 /*
-Theme Name: Test Theme
+Theme Name: Kinkajou
+Theme URI: https://github.com/ricardo-ayres/kinkajou
+Author: Ricardo B. Ayres
+Description: Simple, slim theme for a photographer's portfolio.
+Version: 1.0.0
+License: GNU General Public License v2
+License URI: <https://www.gnu.org/licenses/gpl-2.0.html>
+Text Domain: kinkajou
 */
 
 img {
@@ -20,12 +27,6 @@ img {
   object-fit: contain;
   height: 30%;
   margin: 1vh;
-}
-
-.thumb-permalink {
-	display: block;
-	height: 100%;
-	width: 100%;
 }
 
 .sidenav.external {
