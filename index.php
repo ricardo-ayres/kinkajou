@@ -1,4 +1,15 @@
-<?php get_header(); ?>
+<!DOCTYPE html>
+<html <?php language_attributes(); ?>>
+<head>
+  <meta charset="<?php bloginfo( 'charset' ); ?>">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="profile" href="https://gmpg.org/xfn/11">
+  <?php wp_head(); ?>
+</head>
+<body>
+  <header class="side-nav">
+    <?php wp_nav_menu(); ?>
+  </header>
 
 <div class="main-window">
   <div class="post-board">
@@ -22,4 +33,10 @@
   </div>
 </div>
 
-<?php get_footer() ?>
+  <footer>
+    <?php
+      wp_footer()
+    ?>
+  </footer>
+</body>
+</html>
