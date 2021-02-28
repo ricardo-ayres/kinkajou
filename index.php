@@ -12,16 +12,15 @@
   </header>
 
 <div class="main-window">
-  <div class="post-board">
+  <div class="board">
     <?php
       if (have_posts()) {
         while(have_posts()){
           the_post();
           ?> <!-- the post index content goes in here -->
-            <div class="post-index">
-              <a class="post-index" href="<?php the_permalink(); ?>">
-                <img class="post-index" src="<?php the_post_thumbnail(); ?>"/>
-                <p><?php the_post_title(); ?></p>
+            <div class="index-item">
+              <a href="<?php the_permalink(); ?>">
+                <img src="<?php echo wp_get_attachment_url( get_post_thumbnail_id($post->ID)) ?>"/>
               </a>
             </div>
           <?php
