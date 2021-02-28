@@ -11,24 +11,15 @@
     </div>
 
     <!-- main post index -->
-    <div class="board">
-      <?php
-      if (have_posts()) {
-        while (have_posts()) {
-          the_post(); ?>
-          <div class="board small">
-            <a class="board small thumblink" 
-             style="display: block; height: 100%; width: 100%;"
-             href="<?php the_permalink(); ?>">
-              <img class="board small link thumblink thumb" 
-                 src="<?php echo wp_get_attachment_url(get_post_thumbnail_id($post->ID)); ?>"
-                 style="margin: auto;"/>
-            </a>
-          </div>
-        <?php } ?>
-      <?php } else { ?>
-        <p>Sorry, no posts found.</p>
-      <?php } ?>
+    <div class="postboard">
+      <?php while (have_posts()): ?>
+        <?php the_post(); ?>
+        <div class="postboard postitem">
+          <a style="display: block; height: 100%; width: 100%;" href="<?php the_permalink(); ?>">
+            <img src="<?php echo wp_get_attachment_url(get_post_thumbnail_id($post->ID)); ?>" style="margin: auto;"/>
+          </a>
+        </div>
+      <?php endwhile ?>
     </div>
 
     <footer><?php wp_footer(); ?></footer>

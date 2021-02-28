@@ -15,7 +15,7 @@ img {
   max-height: 100%;
 }
 
-.board {
+.postboard {
   display: flex;
   flex-flow: column wrap;
   height: 90vh;
@@ -23,7 +23,7 @@ img {
   float: left;
 }
 
-.board div {
+.postboard div {
   object-fit: contain;
   height: 30%;
   margin: 1vh;
