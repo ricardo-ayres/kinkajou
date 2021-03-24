@@ -88,15 +88,18 @@ body {
   }
 
   .post.grid.main {
-    width: auto;
-    height: auto;
+    width: 100%;
     display: flex;
     flex-flow: row wrap;
     overflow-y: scroll;
     overflow-x: hidden;
   }
+  .post.grid.permalink {
+    height: auto;
+  }
 
   .post.grid.container {
     width: calc(100% / 2);
     height: auto;
+  }
 }
