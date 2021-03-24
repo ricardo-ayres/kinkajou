@@ -67,6 +67,7 @@ body {
 
 .post.grid.container {
   height: calc(100% / 3);
+  width: auto;
 }
 
 .post.grid.permalink {
@@ -97,4 +98,5 @@ body {
 
   .post.grid.container {
     width: calc(100% / 2);
+    height: auto;
 }
