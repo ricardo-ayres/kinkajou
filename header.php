@@ -12,6 +12,6 @@
   <!-- side nav -->
   <div class="sidenav external">
     <div class="sidenav internal">
-      <a class="sidenav link entry">a link in the sidenav</a>
+      <?php wp_nav_menu(array('theme_location'='primary')); ?>
     </div>
   </div>

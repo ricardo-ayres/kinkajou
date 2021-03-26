@@ -6,4 +6,5 @@ function kinkajou_scripts() {
 }
 
 add_action( 'wp_enqueue_scripts', 'kinkajou_scripts' );
+register_nav_menu('primary', 'Primary Menu');
 ?>
