@@ -81,12 +81,12 @@ body {
 
 .page.content.container {
   box-sizing: border-box;
+  max-width: 696px;
   height: 100%;
   overflow-y: scroll;
 }
 
 .page.content.container img {
-  max-width: 696px;
   width: 100%;
   height: auto;
 }
