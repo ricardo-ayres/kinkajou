@@ -1,13 +1,19 @@
 <?php get_header(); ?>
 
-	<div id="main-content" class="main-content">
-		<?php
-		// Start the Loop.
-		while (have_posts()): the_post();
-			// Include the page content template.
-			get_template_part('content', 'page');
-		endwhile;
-		?>
-	</div><!-- #main-content -->
+<div id="main-content" class="main-content">
+  <?php
+    /* the loop */
+    if ( have_posts() ) {
+      while ( have_posts() ) {
+        /* Set up post data */
+        the_post();
+        /* Output content */
+        the_content();
+      }
+    } else {
+      echo 'Nothing found';
+    }; 
+   ?>
+</div>
 
 <?php get_footer(); ?>
