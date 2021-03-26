@@ -8,6 +8,7 @@
         /* Set up post data */
         the_post();
         /* Output content */
+        the_title();
         the_content();
       }
     } else {
