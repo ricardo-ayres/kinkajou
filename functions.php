@@ -5,6 +5,19 @@ function kinkajou_scripts() {
 
 function kinkajou_get_post_text($content) {
 	return apply_filters('the_content', strip_shortcodes($content));
+
+function kinkajou_get_gallery_urls($id) {
+	$gallery = get_post_gallery($id, false);
+	$output = array();
+	if ($gallery) {
+		$img_ids = explode(",", $gallery['ids']);
+		foreach ($img_ids as $img) {
+			array_push($output, wp_get_attachment_url($img));
+		}
+		return $output;
+	}	else {
+		return false;
+	}
 }
 
 add_theme_support('post-thumbnails');

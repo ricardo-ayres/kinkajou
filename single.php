@@ -8,7 +8,7 @@
         /* Set up post data */
         the_post();
 				$post_text = kinkajou_get_post_text(get_the_content());
-				$gallery = get_post_gallery_images(); 
+				$gallery = kinkajou_get_gallery_urls(get_the_ID());
 
         /* Post title */
         ?>
@@ -21,6 +21,9 @@
 						<?php echo $post_text; ?>
 					</div>
 				<?php
+				foreach ($gallery as $url) {
+					echo $url."<br>";
+				}
       }
     } else {
       echo 'Nothing found';
