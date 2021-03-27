@@ -11,7 +11,7 @@ function kinkajou_get_gallery_img_urls($a_post) {
 	$imgs = get_attached_media('image', $a_post);
 	$imgs_urls = array();
 	foreach ($imgs as $img) {
-		array_push($imgs_urls, get_attachment_url($img));
+		array_push($imgs_urls, get_attachment_url($img->ID));
 	}
 	return $imgs_urls;
 }
