@@ -4,7 +4,7 @@ function kinkajou_scripts() {
 }
 
 function kinkajou_get_post_text($content) {
-	return apply_filters('the_content', $content);
+	return apply_filters('the_content', strip_shortcodes($content));
 }
 
 add_theme_support('post-thumbnails');
