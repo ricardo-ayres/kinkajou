@@ -9,10 +9,11 @@ function kinkajou_get_post_text($content) {
 
 function kinkajou_get_gallery_img_urls($a_post) {
 	$imgs = get_attached_media('image', $a_post);
+	$imgs_urls = array();
 	foreach ($imgs as $img) {
-		array_push($img_urls, get_attachment_url($img));
+		array_push($imgs_urls, get_attachment_url($img));
 	}
-	return $img_urls;
+	return $imgs_urls;
 }
 
 add_theme_support('post-thumbnails');
