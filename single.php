@@ -7,6 +7,7 @@
       while ( have_posts() ) {
         /* Set up post data */
         the_post();
+				$post_text = kinkajou_get_post_text(get_the_content());
 
         /* Post title */
         ?>
@@ -14,7 +15,11 @@
         <?php
 
         /* Output content */
-        the_content();
+				?>
+					<div class="post content text">
+						<?php echo $post_text; ?>
+					</div>
+				<?php
       }
     } else {
       echo 'Nothing found';

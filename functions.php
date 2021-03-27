@@ -1,10 +1,13 @@
 <?php
-add_theme_support('post-thumbnails');
-
 function kinkajou_scripts() {
-    wp_enqueue_style( 'kinkajou-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'kinkajou-style', get_stylesheet_uri() );
 }
 
-add_action( 'wp_enqueue_scripts', 'kinkajou_scripts' );
+function kinkajou_get_post_text($content) {
+	return apply_filters('the_content', $content);
+}
+
+add_theme_support('post-thumbnails');
 register_nav_menu('primary', 'Primary Menu');
+add_action( 'wp_enqueue_scripts', 'kinkajou_scripts' );
 ?>
