@@ -21,9 +21,7 @@
 						<?php echo $post_text; ?>
 					</div>
 				<?php
-				foreach ($gallery as $url) {
-					echo $url."<br>";
-				}
+				/* write gallery code here */
       }
     } else {
       echo 'Nothing found';

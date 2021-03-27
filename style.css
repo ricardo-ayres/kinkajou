@@ -9,6 +9,9 @@ License URI: <https://www.gnu.org/licenses/gpl-2.0.html>
 Text Domain: kinkajou
 */
 
+/* Setting up default fonts */
+h1, h2, h3, h4, h5, h6 {font-family: Raleway, sans-serif;}
+p {font-family: Karla, sans-serif;}
 
 /* Desktop default layout */
 
