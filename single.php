@@ -8,6 +8,7 @@
         /* Set up post data */
         the_post();
 				$post_text = kinkajou_get_post_text(get_the_content());
+				$gallery = kinkajou_get_gallery_img_urls($post);
 
         /* Post title */
         ?>
