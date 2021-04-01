@@ -1,8 +1,6 @@
 <?php
 function kinkajou_scripts() {
 	wp_enqueue_style( 'kinkajou-style', get_stylesheet_uri() );
-	wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Raleaway' );
-	wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Karla' );
 }
 
 function kinkajou_get_post_text($content) {

@@ -10,8 +10,10 @@ Text Domain: kinkajou
 */
 
 /* Setting up default fonts */
-h1, h2, h3, h4, h5, h6 {font-family: Raleway, sans-serif;}
-p {font-family: Karla, sans-serif;}
+@import url('https://fonts.googleapis.com/css2?family=Karla&family=Raleway:wght@500&display=swap');
+
+h1, h2, h3, h4, h5, h6 {font-family: 'Raleway', sans-serif;}
+p {font-family: 'Karla', sans-serif;}
 
 /* Desktop default layout */
 
@@ -28,7 +30,7 @@ body {
 }
 
 .padding {
-  padding: 1vw;
+  padding: 20px;
 }
 
 .sidenav.external {
@@ -55,13 +57,20 @@ body {
   box-sizing: border-box;
 }
 
-.post.grid.main {
+.post.grid.main.wrapper {
+  overflow-x: scroll;
+  height: 100%;
+}
+
+.post.grid.main.flex {
   display: flex;
   flex-flow: column wrap;
-  float: left;
   height: 100%;
-  width: calc(100% - 372px); 
-  overflow-x: scroll;
+  float: left;
+  /*
+  width: calc(100% - 372px);
+  float: left;
+  */
 }
 
 .post.grid.item {
@@ -102,12 +111,14 @@ body {
     height: 0px;
   }
 
-  .post.grid.main {
+  .post.grid.main.wrapper {
+    width: 100%;
+    overflow-y: scroll;
+  }
+  .post.grid.main.flex {
     width: 100%;
     display: flex;
     flex-flow: row wrap;
-    overflow-y: scroll;
-    overflow-x: hidden;
   }
   .post.grid.permalink {
     height: auto;
