@@ -1,18 +1,22 @@
 <?php get_header(); ?>
-
-  <!-- main post board -->
-  <div class="post grid main wrapper">
-    <div class="post grid flex main padding">
-      <?php while (have_posts()): ?>
-        <?php the_post(); ?>
-        <div class="post grid item container padding">
-          <a class="post grid item permalink" href="<?php the_permalink(); ?>">
-            <img class="post grid item thumbnail"
-              src="<?php echo wp_get_attachment_url(get_post_thumbnail_id($post->ID)); ?>"/>
-          </a>
-        </div>
-      <?php endwhile ?>
+<!-- main post board -->
+<div class="index grid main wrapper">
+  <div class="index grid flex main">
+<?php
+while (have_posts()) {
+        the_post();
+?>
+    <div class="index grid item container padding">
+      <a class="index grid item permalink" href="<?php the_permalink(); ?>">
+        <img class="index grid item thumbnail"
+          src="<?= wp_get_attachment_url(get_post_thumbnail_id($post->ID)); ?>"
+        />
+      </a>
     </div>
+<?php
+}
+?>
   </div>
-
-<?php get_footer(); ?>
+</div>
+<?php
+get_footer();
