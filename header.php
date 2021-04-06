@@ -21,7 +21,7 @@ $sidenav_posts_list = get_posts(['numberposts'=>-1]);
       </div>
 
       <!-- Second flex item: Collapsible posts list -->
-      <h3><button id="kinkajou-collapse-button" class="sidenav posts list">SÉRIES +</button></h3>
+      <h3><button id="kinkajou-collapse-button" class="sidenav posts list btn">SÉRIES</button></h3>
       <div id="kinkajou-collapsible-menu" class="sidenav collapsible menu">
 <?php
 foreach ($sidenav_posts_list as $pid) {
@@ -35,7 +35,7 @@ foreach ($sidenav_posts_list as $pid) {
       <!-- Third flex item: Page links in wordpress menu -->
       <div class="sidenav nav menu">
 <?php
-array(
+$navmenu_args = array(
   'theme-location'  => 'primary',
   'container'       => false,
   'items_wrap'      => '%3$s',

@@ -1,14 +1,15 @@
 #!/bin/bash
 WP_THEMES=/var/www/e00m/wp-content/themes
 
-case $@ in
-    *remote*)
-        pushd ..
-        rsync -rv kinkajou e00m.duckdns.org:$WP_THEMES
-        popd
-    ;;
+case $(hostname) in
+    e00m)
+        DEST=$WP_THEMES
+        ;;
     *)
-        mkdir -pv $WP_THEMES/kinkajou
-        cp -rv * $WP_THEMES/kinkajou/
-    ;;
+        DEST=e00m.duckdns.org:$WP_THEMES
+        ;;
 esac
+
+pushd ..
+rsync -rv --exclude '.git' --exclude 'install.sh' kinkajou $DEST
+popd

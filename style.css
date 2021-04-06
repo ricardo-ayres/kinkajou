@@ -55,6 +55,7 @@ body a {
 
 body button {
   border: none;
+  outline: none;
   background-color: inherit;
   font-family: inherit;
   font-size: inherit;
@@ -64,6 +65,21 @@ body button {
   margin: 0;
   padding: 0;
 }
+
+.btn::after {
+  content: " +";
+}
+
+.btn:active:after, .btn.active::after {
+  content: " -";
+}
+
+/*
+body button:active, button:hover, button:focus {
+  border: none;
+  outline: none;
+}
+*/
 
 #main {
   display: block;
@@ -112,7 +128,8 @@ body button {
   /* HACK: making the collapsible menu grow to fill using a huge flex-grow */
   flex-grow: 999; 
   overflow-y: scroll;
-  display: none; /* hide by default */
+  max-height: 0; /* hide by default */
+  transition: max-height 0.2s ease;
 }
 
 .sidenav.nav.menu {
@@ -189,7 +206,7 @@ body button {
 }
 
 .single.text.container {
-  width: 288px;
+  width: 328px;
 }
 
 .gallery.item.container {

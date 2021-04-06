@@ -1,13 +1,12 @@
 function kinkajou_collapse() {
-    var button = document.getElementById("kinkajou-collapse-button");
     var menu = document.getElementById("kinkajou-collapsible-menu");
-    if (menu.style.display != "block") {
-        menu.style.display="block";
-        button.textContent = button.textContent.replace("+", "-");
+    var btn = document.getElementById("kinkajou-collapse-button");
+    if (menu.style.maxHeight) {
+        menu.style.maxHeight = "";
     } else {
-        menu.style.display="none";
-        button.textContent = button.textContent.replace("-", "+");
+        menu.style.maxHeight = "100%";
     }
+    btn.classList.toggle("active");
 }
 
 document.getElementById("kinkajou-collapse-button").onclick = kinkajou_collapse;
