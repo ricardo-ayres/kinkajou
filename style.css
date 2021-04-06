@@ -100,6 +100,7 @@ body a {
   /* HACK: making the collapsible menu grow to fill using a huge flex-grow */
   flex-grow: 999; 
   overflow-y: scroll;
+  display: none; /* hide by default */
 }
 
 .sidenav.nav.menu {
@@ -188,12 +189,11 @@ body a {
 }
 
 
-/* Mobile layout */
+/* Mobile layout deactivated for now */
 
-@media only screen and (max-width: 980px) {
-  .sidenav.external {
-    width: 0px;
-    height: 0px;
+@media only screen and (max-width: 1px) {
+  .sidenav.main.wrapper {
+    display: none;
   }
 
   .post.grid.main.wrapper {

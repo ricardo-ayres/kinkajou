@@ -1,6 +1,7 @@
 <?php
 function kinkajou_scripts() {
 	wp_enqueue_style( 'kinkajou-style', get_stylesheet_uri() );
+  wp_enqueue_script('functions.js', get_template_directory_uri() .'/js/functions.js', array('jquery'), null, true);
 }
 
 function kinkajou_get_post_text($content) {

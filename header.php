@@ -21,10 +21,8 @@ $sidenav_posts_list = get_posts(['numberposts'=>-1]);
       </div>
 
       <!-- Second flex item: Collapsible posts list -->
-      <div class="sidenav posts list">
-        <h3><a href="javascript:void(0)">SÉRIES +</a></h3>
-      </div>
-      <div class="sidenav collapsible menu">
+      <h3 id="kinkajou-collapse-button" class="sidenav posts list"><a href="javascript:void(0)" onclick="kinkajou_collapse()">SÉRIES +</a></h3>
+      <div id="kinkajou-collapsible-menu" class="sidenav collapsible menu">
 <?php
 foreach ($sidenav_posts_list as $pid) {
 ?>
