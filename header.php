@@ -17,7 +17,7 @@ $sidenav_posts_list = get_posts(['numberposts'=>-1]);
     <div class="sidenav flex container padding">
       <!-- First flex item: Site title -->
       <div class="sidenav site title">
-        <h1><a href="<?= get_home_url(); ?>"><?= get_bloginfo(); ?></a></h1>
+        <h1><a href="<?= get_home_url(); ?>"><?= get_bloginfo('name'); ?></a></h1>
       </div>
 
       <!-- Second flex item: Collapsible posts list -->
@@ -47,7 +47,7 @@ foreach ($sidenav_posts_list as $pid) {
       <!-- Last flex item: Sidenav Footer -->
       <div class="sidenav footer">
         <hr/>
-        <p>Footer text goes here</p>
+        <p><?= get_bloginfo('description'); ?></p>
       </div>
     </div>
   </div>
