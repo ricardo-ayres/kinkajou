@@ -53,6 +53,18 @@ body a {
   color: #808080;
 }
 
+body button {
+  border: none;
+  background-color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  text-align: inherit;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+}
+
 #main {
   display: block;
   height: 100vh;

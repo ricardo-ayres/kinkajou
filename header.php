@@ -21,14 +21,12 @@ $sidenav_posts_list = get_posts(['numberposts'=>-1]);
       </div>
 
       <!-- Second flex item: Collapsible posts list -->
-      <h3 id="kinkajou-collapse-button" class="sidenav posts list"><a href="javascript:void(0)" onclick="kinkajou_collapse()">SÉRIES +</a></h3>
+      <h3><button id="kinkajou-collapse-button" class="sidenav posts list">SÉRIES +</button></h3>
       <div id="kinkajou-collapsible-menu" class="sidenav collapsible menu">
 <?php
 foreach ($sidenav_posts_list as $pid) {
 ?>
-        <h4><a href="<?= get_permalink($pid); ?>">
-          <?= esc_html(get_the_title($pid)); ?>
-        </a></h4>
+        <h4><a href="<?= get_permalink($pid); ?>"><?= esc_html(get_the_title($pid)); ?></a></h4>
 <?php
 }
 ?>
@@ -36,7 +34,14 @@ foreach ($sidenav_posts_list as $pid) {
 
       <!-- Third flex item: Page links in wordpress menu -->
       <div class="sidenav nav menu">
-        <?php wp_nav_menu(array('theme-location'=>'primary')); ?>
+<?php
+array(
+  'theme-location'  => 'primary',
+  'container'       => false,
+  'items_wrap'      => '%3$s',
+);
+wp_nav_menu($navmenu_args);
+?>
       </div>
 
       <!-- HACK: empyty div flex spacer -->
