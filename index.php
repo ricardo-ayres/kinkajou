@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 <!-- main post board -->
-<div class="index grid main wrapper">
+<div class="index grid main wrapper padding">
   <div class="index grid flex main">
 <?php
 while (have_posts()) {

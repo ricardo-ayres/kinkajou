@@ -12,6 +12,16 @@ Text Domain: kinkajou
 /* Setting up default fonts */
 @import url('https://fonts.googleapis.com/css2?family=Karla&family=Raleway:wght@500&display=swap');
 
+
+/* Resetting the box model to the only sane way of sizing elements */
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 /* Desktop default layout */
 
 body {
@@ -55,23 +65,60 @@ body a {
   padding: 20px;
 }
 
-.sidenav {
-  display: block;
+.sidenav.main.wrapper {
   float: left;
   height: 100%; 
   width: 372px;
   text-align: right;
 }
 
-.site.title {
-  color: #272727;
+.sidenav.flex.container {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 100%;
+  height: 100%;
+}
+
+.sidenav.site.title {
   font-weight: 700;
   letter-spacing: 0.15rem;
   margin: 0;
+  width: 100%;
+  flex: 0;
+}
+
+.sidenav.site.title a {
+  color: #272727;
+}
+
+.sidenav.posts.list {
+  width: 100%;
+  flex: 0;
+}
+
+.sidenav.collapsible.menu {
+  /* HACK: making the collapsible menu grow to fill using a huge flex-grow */
+  flex-grow: 999; 
+  overflow-y: scroll;
+}
+
+.sidenav.nav.menu {
+  width: 100%;
+  flex: 0;
+} 
+
+.sidenav.spacer{
+  /* HACK: spacer collapses to 0px when collapsible is displayed */
+  flex-basis: 0px;
+  flex-shrink: 999;
+  flex: 1;
+}
+
+.sidenav.footer {
+  width: 100%;
 }
 
 .index.grid.main.wrapper {
-  box-sizing: border-box;
   overflow-x: scroll;
   height: 100%;
 }
@@ -89,7 +136,6 @@ body a {
 
 .index.grid.item {
   display: block;
-  box-sizing: border-box;
 }
 
 .index.grid.container {
@@ -118,13 +164,11 @@ body a {
 }
 
 .single.main.wrapper {
-  box-sizing: border-box;
   height: 100vh;
   overflow-x: scroll;
 }
 
 .single.content.flex {
-  box-sizing: border-box;
   display: flex;
   flex-flow: row nowrap;
   float: left;
@@ -132,12 +176,10 @@ body a {
 }
 
 .single.text.container {
-  box-sizing: border-box;
   width: 288px;
 }
 
 .gallery.item.container {
-  box-sizing: border-box;
   height: 100%;
 }
 
