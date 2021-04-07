@@ -11,7 +11,11 @@
 <div id="main" class="main">
   <!-- side nav -->
 <?php
-$sidenav_posts_list = get_posts(['numberposts'=>-1]);
+$get_posts_args = array(
+  'numberposts'     => -1,
+  'category'        => get_category_by_slug(get_option("sidenav_list_category"))->term_id,
+);
+$sidenav_posts_list = get_posts($get_posts_args);
 ?>
   <div class="sidenav main wrapper padding">
     <div class="sidenav flex container padding">
@@ -21,7 +25,7 @@ $sidenav_posts_list = get_posts(['numberposts'=>-1]);
       </div>
 
       <!-- Second flex item: Collapsible posts list -->
-      <h3><button id="kinkajou-collapse-button" class="sidenav posts list btn">SÉRIES</button></h3>
+      <h3><button id="kinkajou-collapse-button" class="sidenav posts list btn"><?= get_option("sidenav_list_label"); ?></button></h3>
       <div id="kinkajou-collapsible-menu" class="sidenav collapsible menu">
 <?php
 foreach ($sidenav_posts_list as $pid) {
