@@ -48,14 +48,35 @@ body h2 {
   margin: 0;
 }
 
+body h3 {
+  font-weight: 400;
+  margin: 32px 0;
+}
+
+body h4 {
+  font-weight: 400;
+  font-size: 0.875; /* 14px */
+  margin: 12px 0;
+}
+
 body a {
   text-decoration: none;
   color: #808080;
 }
 
+.btn {
+  color: #808080;
+}
+
+body a:active, body a:hover, .current {
+  color: #272727;
+  font-weight: 600;
+}
+
 body button {
   border: none;
   outline: none;
+  color: inherit;
   background-color: inherit;
   font-family: inherit;
   font-size: inherit;
@@ -73,13 +94,6 @@ body button {
 .btn:active:after, .btn.active::after {
   content: " -";
 }
-
-/*
-body button:active, button:hover, button:focus {
-  border: none;
-  outline: none;
-}
-*/
 
 #main {
   display: block;
@@ -110,7 +124,7 @@ body button:active, button:hover, button:focus {
 .sidenav.site.title {
   font-weight: 700;
   letter-spacing: 0.15rem;
-  margin: 0;
+  margin: 40px 0; 
   width: 100%;
   flex: 0;
 }
@@ -124,6 +138,11 @@ body button:active, button:hover, button:focus {
   flex: 0;
 }
 
+.collapsible-item {
+  font-size: 0.875rem;
+  margin: 12px 0;
+}
+
 .sidenav.collapsible.menu {
   /* HACK: making the collapsible menu grow to fill using a huge flex-grow */
   flex-grow: 999; 
@@ -132,12 +151,17 @@ body button:active, button:hover, button:focus {
   transition: max-height 0.2s ease;
 }
 
-.sidenav.nav.menu {
+.sidenav.page.links.container {
   width: 100%;
   flex: 0;
 } 
 
-.sidenav.spacer{
+.sidenav.page.link {
+  font-size: 1.125rem;
+  margin: 32px 0;
+}
+
+.sidenav.spacer {
   /* HACK: spacer collapses to 0px when collapsible is displayed */
   flex-basis: 0px;
   flex-shrink: 999;

@@ -23,6 +23,20 @@ function kinkajou_get_gallery_urls($id) {
 	}
 }
 
+function kinkajou_get_page_by_slug($slug) {
+  if ($slug) {
+    $args = array(
+      "name"          => $slug,
+      "post_type"     => "page",
+      "post_status"   => "publish",
+      "numberposts"   => 1,
+    );
+    $page = get_posts($args)[0];
+  } else {
+    $page = null;
+  }
+  return $page;
+}
 
 /* Theme Settings in Admin Panel */
 function kinkajou_settings() {
@@ -46,10 +60,21 @@ function kinkajou_add_settings_page() {
 
 function kinkajou_settings_fields() {
   add_settings_section("sidenav", "Sidenav Options", null, "kinkajou-settings-page");
-  add_settings_field("sidenav_list_label", "Sidenav post list label", "display_sidenav_list_label", "kinkajou-settings-page", "sidenav");
+
   add_settings_field("sidenav_list_category", "Category slug to list in the sidenav", "display_sidenav_list_category", "kinkajou-settings-page", "sidenav");
-  register_setting("sidenav_group", "sidenav_list_label");
   register_setting("sidenav_group", "sidenav_list_category");
+
+  add_settings_field("sidenav_list_label", "Sidenav post list label", "display_sidenav_list_label", "kinkajou-settings-page", "sidenav");
+  register_setting("sidenav_group", "sidenav_list_label");
+
+  add_settings_field("sidenav_about", "Sidenav About page slug", "display_sidenav_about", "kinkajou-settings-page", "sidenav");
+  register_setting("sidenav_group", "sidenav_about");
+
+  add_settings_field("sidenav_contact", "Sidenav Contact page slug", "display_sidenav_contact", "kinkajou-settings-page", "sidenav");
+  register_setting("sidenav_group", "sidenav_contact");
+
+  add_settings_field("sidenav_resume", "Sidenav Resume page slug", "display_sidenav_resume", "kinkajou-settings-page", "sidenav");
+  register_setting("sidenav_group", "sidenav_resume");
 }
 
 function display_sidenav_list_label() {
@@ -61,6 +86,24 @@ function display_sidenav_list_label() {
 function display_sidenav_list_category() {
 ?>
   <input type="text" name="sidenav_list_category" id="sidenav_list_category" value="<?= get_option('sidenav_list_category'); ?>" />
+<?php
+}
+
+function display_sidenav_about() {
+?>
+  <input type="text" name="sidenav_about" id="sidenav_about" value="<?= get_option('sidenav_about'); ?>" />
+<?php
+}
+
+function display_sidenav_contact() {
+?>
+  <input type="text" name="sidenav_contact" id="sidenav_contact" value="<?= get_option('sidenav_contact'); ?>" />
+<?php
+}
+
+function display_sidenav_resume() {
+?>
+  <input type="text" name="sidenav_resume" id="sidenav_resume" value="<?= get_option('sidenav_resume'); ?>" />
 <?php
 }
 
