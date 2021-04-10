@@ -13,67 +13,28 @@ Text Domain: kinkajou
 @import url('https://fonts.googleapis.com/css2?family=Karla&family=Raleway:wght@500&display=swap');
 
 
-/* Resetting the box model to the only sane way of sizing elements */
+/* Basic resets + text settings */
 html {
   box-sizing: border-box;
+	font-family: 'Raleway', sans-serif;
+	font-weight: 400;
+	color: #272727;
+  font-size: 16px;
 }
 
 *, *:before, *:after {
   box-sizing: inherit;
+	margin: 0;
+	padding: 0;
 }
 
-/* Desktop default layout */
-
-body {
-  margin: 0;
-  font-size: 16px;
-  font-family: 'Raleway', sans-serif;
-  font-weight: 400;
-  color: #272727;
-}
-
-body p {
+p {
   font-family: 'Karla', sans-serif;
-  margin: 0;
 }
 
-body h1 {
-  font-size: 2rem; /* 32px */
-  font-weight: 600;
-  margin: 0 0 16px 0;
-}
-
-body h2 {
-  font-size: 1.125rem; /* 18px */
-  margin: 0;
-}
-
-body h3 {
-  font-weight: 400;
-  margin: 32px 0;
-}
-
-body h4 {
-  font-weight: 400;
-  font-size: 0.875; /* 14px */
-  margin: 12px 0;
-}
-
-body a {
+a, button {
+  color: #808080;
   text-decoration: none;
-  color: #808080;
-}
-
-.btn {
-  color: #808080;
-}
-
-body a:active, body a:hover, .current {
-  color: #272727;
-  font-weight: 600;
-}
-
-body button {
   border: none;
   outline: none;
   color: inherit;
@@ -83,187 +44,9 @@ body button {
   font-weight: inherit;
   text-align: inherit;
   cursor: pointer;
-  margin: 0;
-  padding: 0;
 }
 
-.btn::after {
-  content: " +";
-}
-
-.btn:active:after, .btn.active::after {
-  content: " -";
-}
-
-#main {
-  display: block;
-  height: 100vh;
-  width: 100vw;
-  overflow-y: hidden;
-  overflow-x: hidden;
-}
-
-.padding {
-  padding: 20px;
-}
-
-.sidenav.main.wrapper {
-  float: left;
-  height: 100%; 
-  width: 372px;
-  text-align: right;
-}
-
-.sidenav.flex.container {
-  display: flex;
-  flex-flow: column nowrap;
-  width: 100%;
-  height: 100%;
-}
-
-.sidenav.site.title {
-  font-weight: 700;
-  letter-spacing: 0.15rem;
-  margin: 40px 0; 
-  width: 100%;
-  flex: 0;
-}
-
-.sidenav.site.title a {
+a:active, a:hover, button:active, button:hover, .current {
   color: #272727;
-}
-
-.sidenav.posts.list {
-  width: 100%;
-  flex: 0;
-}
-
-.collapsible-item {
-  font-size: 0.875rem;
-  margin: 12px 0;
-}
-
-.sidenav.collapsible.menu {
-  /* HACK: making the collapsible menu grow to fill using a huge flex-grow */
-  flex-grow: 999; 
-  overflow-y: scroll;
-  max-height: 0; /* hide by default */
-  transition: max-height 0.2s ease;
-}
-
-.sidenav.page.links.container {
-  width: 100%;
-  flex: 0;
-} 
-
-.sidenav.page.link {
-  font-size: 1.125rem;
-  margin: 32px 0;
-}
-
-.sidenav.spacer {
-  /* HACK: spacer collapses to 0px when collapsible is displayed */
-  flex-basis: 0px;
-  flex-shrink: 999;
-  flex: 1;
-}
-
-.sidenav.footer {
-  width: 100%;
-}
-
-.index.grid.main.wrapper {
-  overflow-x: scroll;
-  height: 100%;
-}
-
-.index.grid.main.flex {
-  display: flex;
-  flex-flow: column wrap;
-  height: 100%;
-  float: left;
-  /*
-  width: calc(100% - 372px);
-  float: left;
-  */
-}
-
-.index.grid.item {
-  display: block;
-}
-
-.index.grid.container {
-  height: calc(100% / 3);
-  width: auto;
-}
-
-.index.grid.permalink {
-  height: 100%;
-}
-
-.index.grid.thumbnail {
-  max-width: 100%;
-  max-height: 100%;
-}
-
-.page.main.wrapper {
-  max-width: 736px;
-  height: 100%;
-  overflow-y: scroll;
-}
-
-.page.content.container img {
-  width: 100%;
-  height: auto;
-}
-
-.single.main.wrapper {
-  height: 100vh;
-  overflow-x: scroll;
-}
-
-.single.content.flex {
-  display: flex;
-  flex-flow: row nowrap;
-  float: left;
-  height: 100%;
-}
-
-.single.text.container {
-  width: 328px;
-}
-
-.gallery.item.container {
-  height: 100%;
-}
-
-.gallery.item.image {
-  height: 100%;
-}
-
-
-/* Mobile layout deactivated for now */
-
-@media only screen and (max-width: 1px) {
-  .sidenav.main.wrapper {
-    display: none;
-  }
-
-  .post.grid.main.wrapper {
-    width: 100%;
-    overflow-y: scroll;
-  }
-  .post.grid.main.flex {
-    width: 100%;
-    display: flex;
-    flex-flow: row wrap;
-  }
-  .post.grid.permalink {
-    height: auto;
-  }
-
-  .post.grid.container {
-    width: calc(100% / 2);
-    height: auto;
-  }
+  font-weight: 600;
 }

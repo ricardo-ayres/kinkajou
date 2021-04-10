@@ -1,5 +1,6 @@
-function kinkajou_collapse() {
-  var menu = document.getElementById("kinkajou-collapsible-menu");
+/*
+function kinkajou_posts_list() {
+  var menu = document.getElementById("");:w
   var btn = document.getElementById("kinkajou-collapse-button");
   if (menu.style.maxHeight) {
     menu.style.maxHeight = "";
@@ -8,6 +9,8 @@ function kinkajou_collapse() {
   }
   btn.classList.toggle("active");
 }
+document.getElementById("kinkajou-collapse-button").onclick = kinkajou_collapse;
+*/
 
 function isLinkToCurrentPage() {
   var allLinks = document.getElementsByTagName("a");
@@ -24,5 +27,5 @@ function isLinkToCurrentPage() {
   }
 }
 
-document.getElementById("kinkajou-collapse-button").onclick = kinkajou_collapse;
 isLinkToCurrentPage();
+

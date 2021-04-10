@@ -2,7 +2,6 @@
 
 /* General Theme Setup */
 add_theme_support('post-thumbnails');
-register_nav_menu('primary', 'Primary Menu');
 
 /* Theme Functions */
 function kinkajou_get_post_text($content) {
@@ -36,6 +35,47 @@ function kinkajou_get_page_by_slug($slug) {
     $page = null;
   }
   return $page;
+}
+
+function kinkajou_get_sidenav_posts_list() {
+	$sidenav_list_category = get_option("sidenav_list_category");
+	$get_posts_args = array(
+		'numberposts'     => -1,
+		'category'        => get_category_by_slug($sidenav_list_category)->term_id,
+	);
+	$sidenav_posts_list = get_posts($get_posts_args);
+?>
+<button class="sidenav button">
+	<?= get_option("sidenav_list_label"); ?>
+</button>
+<div class="sidenav collapsible">
+<?php
+	foreach ($sidenav_posts_list as $post_id) {
+?>
+	<h3 class="sidenav post">
+		<a class="sidenav post link" href="<?= get_permalink($post_id); ?>">
+			<?= esc_html(get_the_title($post_id)); ?>
+		</a>
+	</h3>
+<?php
+	}
+?>
+</div><!-- sidenav collapsible -->
+<?php
+}
+
+function kinkajou_get_sidenav_navlinks() {
+	$opts = array("sidenav_about", "sidenav_contact", "sidenav_resume");
+	foreach ($opts as $opt) {
+		$navpage = kinkajou_get_page_by_slug(get_option($opt));
+		if ($navpage) {
+?>
+<a class="sidenav navlink" href="<?= get_permalink($navpage); ?>">
+	<?= $navpage->post_title; ?>
+</a>
+<?php
+		}
+	}
 }
 
 /* Theme Settings in Admin Panel */

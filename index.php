@@ -1,14 +1,14 @@
 <?php get_header(); ?>
 <!-- main post board -->
-<div class="index grid main wrapper padding">
-  <div class="index grid flex main">
+<div class="index wrapper">
+  <div class="index grid">
 <?php
 while (have_posts()) {
         the_post();
 ?>
-    <div class="index grid item container padding">
-      <a class="index grid item permalink" href="<?php the_permalink(); ?>">
-        <img class="index grid item thumbnail"
+    <div class="index item container">
+      <a class="index permalink" href="<?php the_permalink(); ?>">
+        <img class="index thumb"
           src="<?= wp_get_attachment_url(get_post_thumbnail_id($post->ID)); ?>"
         />
       </a>

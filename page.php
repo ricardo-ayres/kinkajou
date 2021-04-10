@@ -1,19 +1,19 @@
 <?php get_header(); ?>
 
-<div class="page main wrapper padding">
+<div class="page wrapper">
 <?php
 /* the loop */
 if ( have_posts() ) {
   while ( have_posts() ) {
 ?>
-  <div class="page content container padding">
+  <div class="page content">
 <?php
     /* Set up post data */
     the_post();
 
     /* Post title */
 ?>
-    <h1 class="page content title"><?php the_title(); ?></h1>
+    <h1 class="page title"><?php the_title(); ?></h1>
 <?php
 
         /* Output content */
@@ -28,4 +28,4 @@ if ( have_posts() ) {
 ?>
 </div>
 
-<?php get_footer(); ?>
+<?php get_footer();
