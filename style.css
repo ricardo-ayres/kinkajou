@@ -50,3 +50,7 @@ a:active, a:hover, button:active, button:hover, .current {
   color: #272727;
   font-weight: 600;
 }
+
+.sidenav a {
+	display: block;
+}

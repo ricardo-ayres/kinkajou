@@ -52,11 +52,9 @@ function kinkajou_get_sidenav_posts_list() {
 <?php
 	foreach ($sidenav_posts_list as $post_id) {
 ?>
-	<h3 class="sidenav post">
-		<a class="sidenav post link" href="<?= get_permalink($post_id); ?>">
-			<?= esc_html(get_the_title($post_id)); ?>
-		</a>
-	</h3>
+	<a class="sidenav post" href="<?= get_permalink($post_id); ?>">
+		<?= esc_html(get_the_title($post_id)); ?>
+	</a>
 <?php
 	}
 ?>

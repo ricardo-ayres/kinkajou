@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 <!-- main post board -->
-<div class="index wrapper">
+<!-- <div class="index wrapper"> -->
   <div class="index grid">
 <?php
 while (have_posts()) {
@@ -17,6 +17,6 @@ while (have_posts()) {
 }
 ?>
   </div>
-</div>
+<!-- </div> -->
 <?php
 get_footer();
