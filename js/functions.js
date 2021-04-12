@@ -1,16 +1,14 @@
-/*
 function kinkajou_posts_list() {
-  var menu = document.getElementById("");:w
-  var btn = document.getElementById("kinkajou-collapse-button");
-  if (menu.style.maxHeight) {
-    menu.style.maxHeight = "";
+  var menu = document.getElementById("sidenav-collapsible");
+  var btn = document.getElementById("sidenav-button");
+  if (menu.style.maxHeight == "100%") {
+    menu.style.maxHeight = 0;
   } else {
     menu.style.maxHeight = "100%";
   }
-  btn.classList.toggle("active");
+  btn.classList.toggle("expanded");
 }
-document.getElementById("kinkajou-collapse-button").onclick = kinkajou_collapse;
-*/
+document.getElementById("sidenav-button").onclick = kinkajou_posts_list;
 
 function isLinkToCurrentPage() {
   var allLinks = document.getElementsByTagName("a");
@@ -18,10 +16,10 @@ function isLinkToCurrentPage() {
     if (link.href == document.URL) {
       link.classList.add("current");
         if (
-            link.classList.contains("collapsible-item")
-            || link.classList.contains("title")
-        ) {
-        document.getElementById("kinkajou-collapse-button").classList.add("current");
+					link.className == "sidenav post current"
+					|| link.className == "sidenav site title current"
+				) {
+        document.getElementById("sidenav-button").classList.add("current");
       }
     }
   }

@@ -45,10 +45,10 @@ function kinkajou_get_sidenav_posts_list() {
 	);
 	$sidenav_posts_list = get_posts($get_posts_args);
 ?>
-<button class="sidenav button">
+<button id="sidenav-button" class="sidenav button">
 	<?= get_option("sidenav_list_label"); ?>
 </button>
-<div class="sidenav collapsible">
+<div id="sidenav-collapsible" class="sidenav collapsible">
 <?php
 	foreach ($sidenav_posts_list as $post_id) {
 ?>
