@@ -37,24 +37,20 @@ function kinkajou_get_page_by_slug($slug) {
   return $page;
 }
 
-function kinkajou_get_sidenav_posts_list() {
-	$sidenav_list_category = get_option("sidenav_list_category");
+function kinkajou_get_sidenav_posts() {
+	$sidenav_posts_category = get_option("sidenav_posts_category");
 	$get_posts_args = array(
 		'numberposts'     => -1,
-		'category'        => get_category_by_slug($sidenav_list_category)->term_id,
+		'category'        => get_category_by_slug($sidenav_posts_category)->term_id,
 	);
-	$sidenav_posts_list = get_posts($get_posts_args);
+	$sidenav_posts = get_posts($get_posts_args);
+  $output_list = array();
 ?>
-<button id="sidenav-button" class="sidenav button">
-	<?= get_option("sidenav_list_label"); ?>
-</button>
-<div id="sidenav-collapsible" class="sidenav collapsible">
+<div class="sidenav posts">
 <?php
-	foreach ($sidenav_posts_list as $post_id) {
+	foreach ($sidenav_posts as $post_id) {
 ?>
-	<a class="sidenav post" href="<?= get_permalink($post_id); ?>">
-		<?= esc_html(get_the_title($post_id)); ?>
-	</a>
+  <a class="sidenav posts item" href="<?= get_permalink($post_id); ?>"><?= esc_html(get_the_title($post_id)); ?></a>
 <?php
 	}
 ?>
@@ -68,9 +64,7 @@ function kinkajou_get_sidenav_navlinks() {
 		$navpage = kinkajou_get_page_by_slug(get_option($opt));
 		if ($navpage) {
 ?>
-<a class="sidenav navlink" href="<?= get_permalink($navpage); ?>">
-	<?= $navpage->post_title; ?>
-</a>
+<a class="sidenav navlink" href="<?= get_permalink($navpage); ?>"><?= $navpage->post_title; ?></a>
 <?php
 		}
 	}
@@ -99,8 +93,8 @@ function kinkajou_add_settings_page() {
 function kinkajou_settings_fields() {
   add_settings_section("sidenav", "Sidenav Options", null, "kinkajou-settings-page");
 
-  add_settings_field("sidenav_list_category", "Category slug to list in the sidenav", "display_sidenav_list_category", "kinkajou-settings-page", "sidenav");
-  register_setting("sidenav_group", "sidenav_list_category");
+  add_settings_field("sidenav_posts_category", "Category slug to list in the sidenav", "display_sidenav_posts_category", "kinkajou-settings-page", "sidenav");
+  register_setting("sidenav_group", "sidenav_posts_category");
 
   add_settings_field("sidenav_list_label", "Sidenav post list label", "display_sidenav_list_label", "kinkajou-settings-page", "sidenav");
   register_setting("sidenav_group", "sidenav_list_label");
@@ -121,9 +115,9 @@ function display_sidenav_list_label() {
 <?php
 }
 
-function display_sidenav_list_category() {
+function display_sidenav_posts_category() {
 ?>
-  <input type="text" name="sidenav_list_category" id="sidenav_list_category" value="<?= get_option('sidenav_list_category'); ?>" />
+  <input type="text" name="sidenav_posts_category" id="sidenav_posts_category" value="<?= get_option('sidenav_posts_category'); ?>" />
 <?php
 }
 

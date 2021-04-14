@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 <!-- main post board -->
-<div class="index wrapper">
+<div class="wrapper">
   <div class="index grid">
 <?php
 while (have_posts()) {

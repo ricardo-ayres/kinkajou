@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<div class="page wrapper">
+<div class="wrapper">
 <?php
 /* the loop */
 if ( have_posts() ) {
