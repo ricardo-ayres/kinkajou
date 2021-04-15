@@ -20,10 +20,8 @@ html {
 	font-weight: 400;
 	color: #272727;
   font-size: 16px;
-  letter-spacing: 0.05rem;
+  letter-spacing: 0.06rem;
 }
-
-h1 { font-size: 2rem; }
 
 *, *:before, *:after {
   box-sizing: inherit;
@@ -33,6 +31,13 @@ h1 { font-size: 2rem; }
 
 p {
   font-family: 'Karla', sans-serif;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
 }
 
 a, button {
@@ -70,7 +75,6 @@ img {
 *::-webkit-scrollbar-track { background-color: #E1E1E1; }
 *::-webkit-scrollbar-thumb {
 	background-color: #989898;
-	border-radius: 4px;
 	border: 1px solid #E1E1E1;
 }
 
@@ -105,7 +109,10 @@ img {
 }
 .sidenav.title {
 	flex: 0;
-	letter-spacing: 0.15rem;
+  font-size: 2rem;
+  font-weight: 700 !important;
+	letter-spacing: 0.30rem;
+  line-height: 2.1rem;
   margin-bottom: 40px;
 }
 
@@ -151,8 +158,9 @@ img {
 .sidenav.footer {
 	flex: 0;
   font-size: 0.75rem;
-  margin-top: 32px;
   line-height: 1.125rem;
+  margin-top: 32px;
+  margin-bottom: -1rem;
 }
 
 /* Index */
@@ -195,5 +203,16 @@ img {
   padding: 20px 40px;
 }
 
-/* Page */
+.single.gallery:hover {
+  cursor: pointer;
+}
 
+/* Page */
+.page.content {
+  width: 776px;
+  padding: 40px;
+  overflow-y: auto;
+}
+.page.content img {
+  width: 100%;
+}

@@ -27,6 +27,12 @@ function isLinkToCurrentPage() {
 
 isLinkToCurrentPage();
 
+/* This function was deactivated. Its purpose was to sequentially scroll the
+ * gallery with mouse clicks. It was replaced by scrolling the clicked image
+ * into view
+ */
+
+/*
 class kgal {
     constructor(className) {
         this.gal = document.getElementsByClassName(className);
@@ -44,3 +50,23 @@ class kgal {
 var sikgl = new kgal("gallery image");
 function gScroll() {sikgl.scroll();}
 document.getElementById("kinkajou-gallery").onclick = gScroll;
+*/
+
+galimgs = document.getElementsByClassName("gallery image");
+for (i of galimgs) {
+    i.onclick = function() {this.scrollIntoView({behavior: 'smooth', inline: 'center'})};
+}
+
+/* Scroll gallery and index horizontally */
+function scrollHorizontally(e) {
+    e = window.event || e;
+    var delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
+    this.scrollLeft -= (delta * 40); // Multiplied by 40
+    e.preventDefault();
+}
+
+// IE9, Chrome, Safari, Opera
+for (e of document.getElementsByClassName("wrapper")) {
+    e.addEventListener('mousewheel', scrollHorizontally, false);
+    e.addEventListener('DOMMouseScroll', scrollHorizontally, false);
+}

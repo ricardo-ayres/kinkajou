@@ -2,6 +2,7 @@
 
 /* General Theme Setup */
 add_theme_support('post-thumbnails');
+add_theme_support('title-tag');
 
 /* Theme Functions */
 function kinkajou_get_post_text($content) {
