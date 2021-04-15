@@ -41,7 +41,7 @@ function scrollHorizontally(e) {
     this.scrollLeft -= (delta * 40); // Multiplied by 40
     e.preventDefault();
 }
-for (e of document.getElementsByClassName("wrapper")) {
+for (e of document.getElementsByClassName("wrapper horizontal")) {
     /* IE9, Chrome, Safari, Opera */
     e.addEventListener('mousewheel', scrollHorizontally, false);
     /* Firefox */

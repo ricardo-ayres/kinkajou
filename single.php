@@ -2,7 +2,7 @@
 
 get_header();
 ?>
-<div id="kinkajou-gallery" class="wrapper">
+<div id="kinkajou-gallery" class="wrapper horizontal">
   <div class="single flex">
 <?php
 /* the loop */
