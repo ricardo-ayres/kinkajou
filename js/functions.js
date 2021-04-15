@@ -18,7 +18,7 @@ function isLinkToCurrentPage() {
     if (link.href == document.URL) {
       link.classList.add("current");
         if (
-          link.className == "sidenav post current"
+          (link.classList.contains("posts") && link.classList.contains("item"))
           || link.id == "home"
         ) {
         document.getElementById("sidenav-button").classList.add("current");
@@ -36,14 +36,29 @@ for (i of galimgs) {
 
 /* Scroll gallery and index horizontally */
 function scrollHorizontally(e) {
-    e = window.event || e;
-    var delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
-    this.scrollLeft -= (delta * 40); // Multiplied by 40
-    e.preventDefault();
+    if (this.classList.contains("horizontal") && !this.classList.contains("locked")) {
+        e = window.event || e;
+        var delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
+        this.scrollLeft -= (delta * 30);
+        e.preventDefault();
+    }
 }
+
 for (e of document.getElementsByClassName("wrapper horizontal")) {
     /* IE9, Chrome, Safari, Opera */
     e.addEventListener('mousewheel', scrollHorizontally, false);
     /* Firefox */
     e.addEventListener('DOMMouseScroll', scrollHorizontally, false);
 }
+
+for (e of document.getElementsByClassName("single text")) {
+    e.onclick = function(){
+        for (e of document.getElementsByClassName("wrapper horizontal")) {
+            if (e.contains(this)) {
+                e.classList.toggle("locked");
+            }
+        }
+        this.classList.toggle("wide");
+    };
+}
+

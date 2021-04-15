@@ -41,7 +41,7 @@ h1 {
 }
 
 a, button {
-  color: #808080;
+  color: #767676;
   text-decoration: none;
   border: none;
   outline: none;
@@ -78,6 +78,11 @@ img {
 	border: 1px solid #E1E1E1;
 }
 
+.scrollspacer {
+  overflow: hidden;
+  padding-bottom: 16px;
+}
+
 #main {
 	height: 100vh;
 	width: 100vw;
@@ -90,6 +95,7 @@ img {
 	width: 100%;
 	overflow: auto;
 }
+
 /* Sidenav */
 .sidenav a {
 	display: block;
@@ -171,6 +177,7 @@ img {
 	width: fit-content;
 	float: left;
 	padding: 20px;
+  padding-bottom: 0px;
 }
 
 .index.item.container {
@@ -191,12 +198,21 @@ img {
 .single.flex > div {
   flex-shrink: 0;
   height: 100%;
+  padding-bottom: 0px;
 }
 
 .single.text {
   flex-grow: 0;
   overflow: auto;
   width: 328px;
+}
+
+.single.text.wide {
+  width: 736px;
+}
+
+.single.text.wide img {
+  width: 100%;
 }
 
 .single.gallery {
