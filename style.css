@@ -137,6 +137,7 @@ img {
   overflow-y: auto;
   flex: 999; /* HACK expand to maximum height */
   max-height: 0; /* default collapsed */
+  color: #767676;
 }
 
 .sidenav.posts.item {

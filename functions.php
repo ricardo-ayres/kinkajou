@@ -47,6 +47,7 @@ function kinkajou_get_sidenav_posts() {
 	$get_posts_args = array(
 		'numberposts'     => -1,
 		'category'        => get_category_by_slug($sidenav_posts_category)->term_id,
+    'order'           => 'ASC',
 	);
 	$sidenav_posts = get_posts($get_posts_args);
   $output_list = array();
