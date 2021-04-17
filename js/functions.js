@@ -39,7 +39,7 @@ function scrollHorizontally(e) {
     if (this.classList.contains("horizontal") && !this.classList.contains("locked")) {
         e = window.event || e;
         var delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
-        this.scrollLeft -= (delta * 30);
+        this.scrollLeft -= (delta * 40);
         e.preventDefault();
     }
 }
