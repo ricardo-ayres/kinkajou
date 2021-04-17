@@ -54,8 +54,13 @@ a, button {
   cursor: pointer;
 }
 
-a:active, a:hover, button:active, button:hover, .current {
+a:active, a:hover, button:active, button:hover {
   color: #272727;
+  font-weight: 600;
+}
+
+.current {
+  color: #272727 !important;
   font-weight: 600;
 }
 
@@ -137,12 +142,12 @@ img {
   overflow-y: auto;
   flex: 999; /* HACK expand to maximum height */
   max-height: 0; /* default collapsed */
-  color: #767676;
 }
 
 .sidenav.posts.item {
   margin: 12px;
   font-size: 0.875rem;
+  color: #767676;
 }
 
 .sidenav.posts > :first-child,
