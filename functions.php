@@ -2,7 +2,11 @@
 
 /* General Theme Setup */
 add_theme_support('post-thumbnails');
+register_nav_menu('primary', 'Primary Menu');
 add_theme_support('title-tag');
+@ini_set('upload_max_size', '10M');
+@ini_set('post_max_size', '10M');
+@ini_set('max_execution_time', '300');
 
 /* Theme Functions */
 function kinkajou_get_post_text($content) {
