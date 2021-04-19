@@ -54,7 +54,7 @@ a, button {
   cursor: pointer;
 }
 
-a:active, a:hover, button:active, .current {
+a:active, a:hover, button:active, button:hover, .current {
   color: #272727 !important;
   font-weight: 600 !important;
 }
