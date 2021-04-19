@@ -41,7 +41,7 @@ h1 {
 }
 
 a, button {
-  color: #767676;
+  color: inherit;
   text-decoration: none;
   border: none;
   outline: none;
@@ -54,14 +54,9 @@ a, button {
   cursor: pointer;
 }
 
-a:active, a:hover, button:active, button:hover {
-  color: #272727;
-  font-weight: 600;
-}
-
-.current {
+a:active, a:hover, button:active, .current {
   color: #272727 !important;
-  font-weight: 600;
+  font-weight: 600 !important;
 }
 
 img {
@@ -102,6 +97,11 @@ img {
 }
 
 /* Sidenav */
+.sidenav {
+  font-size: 1.125rem;
+	color: #767676;
+}
+
 .sidenav a {
 	display: block;
 }
@@ -115,9 +115,6 @@ img {
   overflow: hidden;
 }
 
-.sidenav {
-  font-size: 1.125rem;
-}
 .sidenav.title {
 	flex: 0;
   font-size: 2rem;
@@ -125,6 +122,7 @@ img {
 	letter-spacing: 0.30rem;
   line-height: 2.1rem;
   margin-bottom: 40px;
+	color: #272727;
 }
 
 .sidenav.button:after {
