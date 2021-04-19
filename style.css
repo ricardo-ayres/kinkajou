@@ -140,7 +140,7 @@ img {
 
 .sidenav.collapsible {
   overflow-y: auto;
-  flex: 999; /* HACK expand to maximum height */
+  /* flex: 999; /* HACK expand to maximum height */
   max-height: 0; /* default collapsed */
 }
 

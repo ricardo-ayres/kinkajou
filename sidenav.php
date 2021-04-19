@@ -20,7 +20,7 @@
       <!-- Last flex item: Sidenav Footer -->
       <div class="sidenav footer">
         <hr/>
-        <p><?= get_bloginfo('description'); ?></p>
+        <p><?= html_entity_decode(get_bloginfo('description')); ?></p>
       </div>
   </div>
 <?php
