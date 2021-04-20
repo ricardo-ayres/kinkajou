@@ -15,48 +15,48 @@ Text Domain: kinkajou
 
 /* Basic resets + text settings */
 html {
-  box-sizing: border-box;
+	box-sizing: border-box;
 	font-family: 'Raleway', sans-serif;
 	font-weight: 400;
 	color: #272727;
-  font-size: 16px;
-  letter-spacing: 0.06rem;
+	font-size: 16px;
+	letter-spacing: 0.06rem;
 }
 
 *, *:before, *:after {
-  box-sizing: inherit;
+	box-sizing: inherit;
 	margin: 0;
 	padding: 0;
 }
 
 p {
-  font-family: 'Karla', sans-serif;
-  margin-bottom: 1rem;
+	font-family: 'Karla', sans-serif;
+	margin-bottom: 1rem;
 }
 
 h1 {
-  font-size: 2rem;
-  font-weight: 600;
-  margin-bottom: 1.5rem;
+	font-size: 2rem;
+	font-weight: 600;
+	margin-bottom: 1.5rem;
 }
 
 a, button {
-  color: inherit;
-  text-decoration: none;
-  border: none;
-  outline: none;
-  color: inherit;
-  background-color: inherit;
-  font-family: inherit;
-  font-size: inherit;
-  font-weight: inherit;
-  text-align: inherit;
-  cursor: pointer;
+	color: inherit;
+	text-decoration: none;
+	border: none;
+	outline: none;
+	color: inherit;
+	background-color: inherit;
+	font-family: inherit;
+	font-size: inherit;
+	font-weight: inherit;
+	text-align: inherit;
+	cursor: pointer;
 }
 
 a:active, a:hover, button:active, button:hover, .current {
-  color: #272727 !important;
-  font-weight: 600 !important;
+	color: #272727 !important;
+	font-weight: 600 !important;
 }
 
 img {
@@ -82,22 +82,22 @@ img {
 	height: 100vh;
 	display: grid;
 	grid-template-columns: 308px auto;
-  grid-template-rows: 146px auto 60px;
-  grid-auto-flow: column;
-  margin-left: 64px;
+	grid-template-rows: 146px auto 60px;
+	grid-auto-flow: column;
+	margin-left: 64px;
 }
 
 #main-content {
-  grid-row-start: 1;
-  grid-row-end: 4;
-  height: inherit;
-  overflow: hidden;
+	grid-row-start: 1;
+	grid-row-end: 4;
+	height: inherit;
+	overflow: hidden;
 }
 
 .scrollspacer {
-  overflow: hidden;
-  padding-bottom: 16px;
-  height: 100%;
+	overflow: hidden;
+	padding-bottom: 16px;
+	height: 100%;
 }
 
 .wrapper {
@@ -107,29 +107,29 @@ img {
 }
 
 #title {
-  font-size: 2rem;
-  font-weight: 700 !important;
+	font-size: 2rem;
+	font-weight: 700 !important;
 	letter-spacing: 0.30rem;
-  line-height: 2.1rem;
-  text-align: right;
-  margin-top: 40px;
-  margin-right: 40px;
+	line-height: 2.1rem;
+	text-align: right;
+	margin-top: 40px;
+	margin-right: 40px;
 	color: #272727;
 }
 
 #footer {
-  text-align: right;
-  font-size: 0.75rem;
-  line-height: 1.125rem;
-  margin-right: 40px
+	text-align: right;
+	font-size: 0.75rem;
+	line-height: 1.125rem;
+	margin-right: 40px
 }
 
 /* Sidenav */
 .sidenav {
-  font-size: 1.125rem;
+	font-size: 1.125rem;
 	color: #767676;
-  margin-right: 40px;
-  text-align: right;
+	margin-right: 40px;
+	text-align: right;
 }
 
 .sidenav a {
@@ -141,7 +141,7 @@ img {
 	flex-flow: column;
 	height: 100%;
 	text-align: right;
-  overflow: hidden;
+	overflow: hidden;
 }
 
 
@@ -150,40 +150,40 @@ img {
 }
 
 .sidenav.button.expanded {
-  margin-bottom: 16px;
+	margin-bottom: 16px;
 }
 .sidenav.button.expanded:after {
 	content: " -";
 }
 
 .sidenav.collapsible {
-  overflow-y: auto;
-  /* flex: 999; /* HACK expand to maximum height */
-  max-height: 0; /* default collapsed */
+	overflow-y: auto;
+	/* flex: 999; /* HACK expand to maximum height */
+	max-height: 0; /* default collapsed */
 }
 
 .sidenav.posts.item {
-  margin: 12px;
-  font-size: 0.875rem;
-  color: #767676;
+	margin: 12px;
+	font-size: 0.875rem;
+	color: #767676;
 }
 
 .sidenav.posts > :first-child,
 .sidenav.posts > :last-child {
-  margin: 0 12px;
+	margin: 0 12px;
 }
 
 .sidenav.posts {
-  overflow-y: hidden;
-  margin-right: 0;
+	overflow-y: hidden;
+	margin-right: 0;
 }
 
 .sidenav.navlinks {
-  flex: 1; /* HACK act like a spacer */
+	flex: 1; /* HACK act like a spacer */
 }
 
 .sidenav.navlink {
-  margin: 32px 0;
+	margin: 32px 0;
 }
 
 /* Index */
@@ -194,7 +194,7 @@ img {
 	width: fit-content;
 	float: left;
 	padding: 20px;
-  padding-bottom: 0px;
+	padding-bottom: 0px;
 }
 
 .index.item.container {
@@ -204,48 +204,48 @@ img {
 
 /* Single */
 .single {
-  padding: 20px;
+	padding: 20px;
 }
 .single.flex {
-  display: flex;
-  flex-flow: row nowrap;
-  height: 100%;
+	display: flex;
+	flex-flow: row nowrap;
+	height: 100%;
 }
 
 .single.flex > div {
-  flex-shrink: 0;
-  height: 100%;
-  padding-bottom: 0px;
+	flex-shrink: 0;
+	height: 100%;
+	padding-bottom: 0px;
 }
 
 .single.text {
-  flex-grow: 0;
-  overflow: auto;
-  width: 328px;
+	flex-grow: 0;
+	overflow: auto;
+	width: 328px;
 }
 
 .single.text.wide {
-  width: 736px;
+	width: 736px;
 }
 
 .single.text.wide img {
-  width: 100%;
+	width: 100%;
 }
 
 .single.gallery {
-  padding: 20px 40px;
+	padding: 20px 40px;
 }
 
 .single.gallery:hover {
-  cursor: pointer;
+	cursor: pointer;
 }
 
 /* Page */
 .page.content {
-  width: 776px;
-  padding: 40px;
-  overflow-y: auto;
+	width: 776px;
+	padding: 40px;
+	overflow-y: auto;
 }
 .page.content img {
-  width: 100%;
+	width: 100%;
 }

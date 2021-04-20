@@ -4,27 +4,27 @@
 <?php
 /* the loop */
 if ( have_posts() ) {
-  while ( have_posts() ) {
+	while ( have_posts() ) {
 ?>
-  <div class="page content">
+	<div class="page content">
 <?php
-    /* Set up post data */
-    the_post();
+		/* Set up post data */
+		the_post();
 
-    /* Post title */
+		/* Post title */
 ?>
-    <h1 class="page title"><?php the_title(); ?></h1>
+		<h1 class="page title"><?php the_title(); ?></h1>
 <?php
 
-        /* Output content */
-        the_content();
+		/* Output content */
+		the_content();
 ?>
-  </div>
+	</div>
 <?php
-  }
+	}
 } else {
-  echo 'Nothing found';
-}; 
+	echo 'Nothing found';
+};
 ?>
 </div>
 
