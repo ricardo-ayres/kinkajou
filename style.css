@@ -81,9 +81,10 @@ img {
 #main {
 	height: 100vh;
 	display: grid;
-	grid-template-columns: 308px auto;
-	grid-template-rows: 146px auto 60px;
+	grid-template-columns: 268px auto;
+	grid-template-rows: max-content auto max-content;
 	grid-auto-flow: column;
+	grid-column-gap: 40px;
 	margin-left: 64px;
 }
 
@@ -108,12 +109,11 @@ img {
 
 #title {
 	font-size: 2rem;
-	font-weight: 700 !important;
+	font-weight: 700;
 	letter-spacing: 0.30rem;
 	line-height: 2.1rem;
 	text-align: right;
-	margin-top: 40px;
-	margin-right: 40px;
+	margin: 40px 0;
 	color: #272727;
 }
 
@@ -121,14 +121,13 @@ img {
 	text-align: right;
 	font-size: 0.75rem;
 	line-height: 1.125rem;
-	margin-right: 40px
+	margin-bottom: 1.5rem;
 }
 
 /* Sidenav */
 .sidenav {
 	font-size: 1.125rem;
 	color: #767676;
-	margin-right: 40px;
 	text-align: right;
 }
 
@@ -175,7 +174,6 @@ img {
 
 .sidenav.posts {
 	overflow-y: hidden;
-	margin-right: 0;
 }
 
 .sidenav.navlinks {
