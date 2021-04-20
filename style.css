@@ -256,7 +256,7 @@ img {
 
 	#main {
 		grid-template-columns: auto;
-		grid-template-rows: max-content max-content max-content;
+		grid-template-rows: max-content auto max-content;
 		margin: 0;
 	}
 
@@ -265,6 +265,7 @@ img {
 		grid-column-end: 2;
 		grid-row-start: 2;
 		grid-row-end: 3;
+		height: 100%;
 	}
 
 	.sidenav.wrapper {
