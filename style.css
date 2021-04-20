@@ -247,3 +247,30 @@ img {
 .page.content img {
 	width: 100%;
 }
+
+@media screen and (max-width: 980px) {
+	img {
+		width: 100%;
+		height: auto;
+	}
+
+	#main {
+		grid-template-columns: auto;
+		grid-template-rows: max-content max-content max-content;
+	}
+
+	#main-content {
+		grid-column-start: 1;
+		grid-column-end: 2;
+		grid-row-start: 2;
+		grid-row-end: 3;
+	}
+
+	.sidenav.wrapper {
+		display: none;
+	}
+
+	.index.grid {
+		flex-flow: row wrap;
+	}
+}

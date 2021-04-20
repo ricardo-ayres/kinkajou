@@ -36,12 +36,12 @@ for (i of galimgs) {
 
 /* Scroll gallery and index horizontally */
 function scrollHorizontally(e) {
-		if (this.classList.contains("horizontal") && !this.classList.contains("locked")) {
-				e = window.event || e;
-				var delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
-				this.scrollLeft -= (delta * 40);
-				e.preventDefault();
-		}
+    if ((screen.width >= 980) && this.classList.contains("horizontal") && !this.classList.contains("locked")) {
+        e = window.event || e;
+        var delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
+        this.scrollLeft -= (delta * 30);
+        e.preventDefault();
+    }
 }
 
 for (e of document.getElementsByClassName("wrapper horizontal")) {
