@@ -257,6 +257,7 @@ img {
 	#main {
 		grid-template-columns: auto;
 		grid-template-rows: max-content max-content max-content;
+		margin: 0;
 	}
 
 	#main-content {
@@ -272,5 +273,10 @@ img {
 
 	.index.grid {
 		flex-flow: row wrap;
+	}
+
+	.index.item.container {
+		width: 50%;
+		height: auto;
 	}
 }
