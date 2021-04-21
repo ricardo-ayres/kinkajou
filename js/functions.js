@@ -28,7 +28,7 @@ function isLinkToCurrentPage() {
 }
 isLinkToCurrentPage();
 
-/* Scroll clicked gallery images into view */
+/* Scroll gallery images into view when clicked */
 galimgs = document.getElementsByClassName("gallery image");
 for (i of galimgs) {
 		i.onclick = function() {this.scrollIntoView({behavior: 'smooth', inline: 'center'})};
@@ -36,14 +36,13 @@ for (i of galimgs) {
 
 /* Scroll gallery and index horizontally */
 function scrollHorizontally(e) {
-    if ((screen.width >= 980) && this.classList.contains("horizontal") && !this.classList.contains("locked")) {
+    if ((window.innerWidth >= 980) && this.classList.contains("horizontal") && !this.classList.contains("locked")) {
         e = window.event || e;
         var delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
         this.scrollLeft -= (delta * 30);
         e.preventDefault();
     }
 }
-
 for (e of document.getElementsByClassName("wrapper horizontal")) {
 		/* IE9, Chrome, Safari, Opera */
 		e.addEventListener('mousewheel', scrollHorizontally, false);
@@ -61,4 +60,3 @@ for (e of document.getElementsByClassName("single text")) {
 				this.classList.toggle("wide");
 		};
 }
-
