@@ -249,35 +249,81 @@ img {
 }
 
 @media screen and (max-width: 980px) {
+	html {
+		font-size: 10px;
+	}
+
 	img {
 		width: 100%;
 		height: auto;
 	}
 
-	#main {
-		grid-template-columns: auto;
-		grid-template-rows: max-content auto max-content;
+	#title {
+		position: fixed;
+		padding: 32px 24px;
+		top: 0;
 		margin: 0;
+        text-align: left;
+        width: 100%;
+        background-color: white;
+	}
+	#title > a {
+		display: block;
+		width: min-content;
+	}
+
+	#main {
+		padding-top: 90px;
+		margin: 0;
+		grid-template-columns: auto;
+		grid-template-rows: auto auto;
+		height: 100%;
+		width: 100%;
+		overflow: hidden;
 	}
 
 	#main-content {
+		margin: 12px;
 		grid-column-start: 1;
 		grid-column-end: 2;
-		grid-row-start: 2;
-		grid-row-end: 3;
+		grid-row-start: 1;
+		grid-row-end: 2;
+		grid-gap: 0;
 		height: 100%;
 	}
 
+	#footer {
+		grid-row-start: 2;
+		grid-row-end: 3;
+		grid-column-start: 1;
+		grid-column-end: 2;
+		text-align: center;
+		margin: 24px;
+	}
+
 	.sidenav.wrapper {
-		display: none;
+		display: block;
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 100%;
+		background: lightgray;
 	}
 
 	.index.grid {
 		flex-flow: row wrap;
+		margin: 0;
+		padding: 0;
+	}
+
+	.scrollspacer {
+		padding: 0;
 	}
 
 	.index.item.container {
 		width: 50%;
 		height: auto;
+		padding: 12px;
 	}
 }
