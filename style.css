@@ -29,7 +29,10 @@ html {
 	padding: 0;
 }
 
-hr { border-top: 1px solid black; } 
+hr {
+	border-top: 1px solid black;
+	border-bottom: 7px solid #0000;
+}
 
 p {
 	font-family: 'Karla', sans-serif;
@@ -62,14 +65,10 @@ a:active, a:hover, button:active, button:hover, .current {
 	font-weight: 600 !important;
 }
 
-a.index.permalink {
-	display: block;
-}
 img, svg {
 	max-height: 100%;
 	max-width: 100%;
 	height: auto;
-	display: block;
 }
 
 /* Scrollbars */
@@ -87,6 +86,7 @@ img, svg {
 	border: 1px solid #E1E1E1;
 }
 
+/* General Layout */
 #main {
 	height: 100vh;
 	display: grid;
@@ -148,30 +148,40 @@ img, svg {
 	display: block;
 }
 
-.sidenav.wrapper {
+#sidenav-wrapper {
 	display: flex;
 	flex-flow: column;
 	height: 100%;
-	text-align: right;
 	overflow: hidden;
 }
 
+#mobile-menu-close-btn { display: none; }
 
-.sidenav.button:after {
+#sidenav-button {
+	transition: margin-bottom 0.2s;
+}
+
+#sidenav-button:after {
 	content: " +";
 }
 
-.sidenav.button.expanded {
+#sidenav-button.expanded {
 	margin-bottom: 16px;
 }
-.sidenav.button.expanded:after {
+
+#sidenav-button.expanded:after {
 	content: " -";
 }
 
-.sidenav.collapsible {
+#sidenav-collapsible {
 	overflow-y: auto;
 	/* flex: 999; /* HACK expand to maximum height */
 	max-height: 0; /* default collapsed */
+	transition: max-height 0.2s;
+}
+
+#sidenav-collapsible.expanded {
+	max-height: 100%;
 }
 
 .sidenav.posts.item {
@@ -197,7 +207,7 @@ img, svg {
 	margin: 32px 0;
 }
 
-/* Index */
+/* Post Grid */
 .index.grid {
 	display: flex;
 	flex-flow: column wrap;
@@ -206,6 +216,16 @@ img, svg {
 	float: left;
 	padding: 20px;
 	padding-bottom: 0px;
+}
+
+.index.permalink {
+	display: block;
+	height: 100%;
+}
+
+.index.thumb {
+	display: block;
+	height: 100%;
 }
 
 .index.item.container {
@@ -266,6 +286,7 @@ img, svg {
 		font-size: 10px;
 	}
 
+	/* Title, Menu and General layout */
 	#title a {
 		display: inline-block;
 		width: min-content;
@@ -322,16 +343,60 @@ img, svg {
 		font-size: 1.2rem;
 	}
 
-	.sidenav.wrapper {
-		display: block;
+	/* Sidenav becomes the mobile menu */
+	.sidenav {
+		text-align: left;
+		font-size: 1.8rem;
+	}
+	#sidenav-wrapper {
 		position: fixed;
 		width: 100%;
-		height: 100%;
+		height: 100vh;
+		padding: 24px;
 		top: 0;
-		left: 100%;
-		background: lightgray;
+		left: 101%;
+		background: white;
+		transition: left 0.4s;
 	}
 
+	#mobile-menu-close-btn {
+		display: block;
+		padding: 4px;
+		height: 24px;
+		width: 24px;
+	}
+
+	#sidenav-collapsible {
+		max-height: 100%;
+		overflow: auto;
+	}
+
+	#sidenav-button,
+	#sidenav-button:after,
+	#sidenav-button.expanded:after {
+		content: "";
+		margin: 16px 0;
+	}
+
+	.sidenav.posts.item {
+		font-size: 1.4rem;
+		margin: 12px 0;
+	}
+
+	.sidenav.posts > :first-child,
+	.sidenav.posts > :last-child {
+		margin: 0;
+	}
+
+	.show {
+		left: 0 !important;
+	}
+
+	.sidenav.navlink {
+		margin: 32px 0;
+	}
+
+	/* Post Grid */
 	.index.grid {
 		flex-flow: row wrap;
 		margin: 0;
@@ -346,5 +411,9 @@ img, svg {
 		width: 50%;
 		height: fit-content;
 		padding: 12px;
+	}
+
+	.index.thumb {
+		height: unset;
 	}
 }

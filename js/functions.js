@@ -1,19 +1,23 @@
 /* Collapse posts menu in sidenav */
-function kinkajou_posts_list() {
-	var menu = document.getElementById("sidenav-collapsible");
-	var btn = document.getElementById("sidenav-button");
-	if (menu.style.maxHeight == "unset") {
-		menu.style.maxHeight = 0;
-	} else {
-		menu.style.maxHeight = "unset";
-	}
-	btn.classList.toggle("expanded");
+document.getElementById("sidenav-button").onclick = function () {
+	document.getElementById("sidenav-collapsible").classList.toggle("expanded");
+	this.classList.toggle("expanded");
 }
-document.getElementById("sidenav-button").onclick = kinkajou_posts_list;
+
+/* Mobile Layout Menu Button */
+document.getElementById("title-button").onclick = function () {
+	menu = document.getElementById("sidenav-wrapper");
+	menu.classList.add("show");
+}
+
+document.getElementById("mobile-menu-close-btn").onclick = function () {
+	menu = document.getElementById("sidenav-wrapper");
+	menu.classList.remove("show");
+}
 
 /* Highlight navigation to current page */
 function isLinkToCurrentPage() {
-	var allLinks = document.getElementsByTagName("a");
+	allLinks = document.getElementsByTagName("a");
 	for (link of allLinks) {
 		if (link.href == document.URL) {
 			link.classList.add("current");
@@ -38,7 +42,7 @@ for (i of galimgs) {
 function scrollHorizontally(e) {
     if ((window.innerWidth >= 980) && this.classList.contains("horizontal") && !this.classList.contains("locked")) {
         e = window.event || e;
-        var delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
+        delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
         this.scrollLeft -= (delta * 30);
         e.preventDefault();
     }
