@@ -65,9 +65,9 @@ function kinkajou_get_sidenav_posts() {
 }
 
 function kinkajou_get_sidenav_navlinks() {
-	$opts = array("sidenav_about", "sidenav_contact", "sidenav_resume");
-	foreach ($opts as $opt) {
-		$navpage = kinkajou_get_page_by_slug(get_option($opt));
+	$pages = explode(" ", get_option("sidenav_navlinks"));
+	foreach ($pages as $page) {
+		$navpage = kinkajou_get_page_by_slug($page);
 		if ($navpage) {
 ?>
 <a class="sidenav navlink" href="<?= get_permalink($navpage); ?>"><?= $navpage->post_title; ?></a>
@@ -105,14 +105,8 @@ function kinkajou_settings_fields() {
 	add_settings_field("sidenav_list_label", "Sidenav post list label", "display_sidenav_list_label", "kinkajou-settings-page", "sidenav");
 	register_setting("sidenav_group", "sidenav_list_label");
 
-	add_settings_field("sidenav_about", "Sidenav About page slug", "display_sidenav_about", "kinkajou-settings-page", "sidenav");
-	register_setting("sidenav_group", "sidenav_about");
-
-	add_settings_field("sidenav_contact", "Sidenav Contact page slug", "display_sidenav_contact", "kinkajou-settings-page", "sidenav");
-	register_setting("sidenav_group", "sidenav_contact");
-
-	add_settings_field("sidenav_resume", "Sidenav Resume page slug", "display_sidenav_resume", "kinkajou-settings-page", "sidenav");
-	register_setting("sidenav_group", "sidenav_resume");
+	add_settings_field("sidenav_navlinks", "Sidenav page slugs", "display_sidenav_navlinks", "kinkajou-settings-page", "sidenav");
+	register_setting("sidenav_group", "sidenav_navlinks");
 }
 
 function display_sidenav_list_label() {
@@ -127,23 +121,12 @@ function display_sidenav_posts_category() {
 <?php
 }
 
-function display_sidenav_about() {
+function display_sidenav_navlinks() {
 ?>
-	<input type="text" name="sidenav_about" id="sidenav_about" value="<?= get_option('sidenav_about'); ?>" />
+	<input type="text" name="sidenav_navlinks" id="sidenav_navlinks" value="<?= get_option('sidenav_navlinks'); ?>" />
 <?php
 }
 
-function display_sidenav_contact() {
-?>
-	<input type="text" name="sidenav_contact" id="sidenav_contact" value="<?= get_option('sidenav_contact'); ?>" />
-<?php
-}
-
-function display_sidenav_resume() {
-?>
-	<input type="text" name="sidenav_resume" id="sidenav_resume" value="<?= get_option('sidenav_resume'); ?>" />
-<?php
-}
 
 add_action('admin_init', 'kinkajou_settings_fields');
 add_action('admin_menu', 'kinkajou_add_settings_page');
