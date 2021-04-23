@@ -330,7 +330,7 @@ img, svg {
 		grid-row-start: 1;
 		grid-row-end: 2;
 		grid-gap: 0;
-		height: 100%;
+		height: unset;
 	}
 
 	#footer {
@@ -340,6 +340,7 @@ img, svg {
 		grid-column-end: 2;
 		text-align: center;
 		margin: 24px;
+		margin-top: 0;
 		font-size: 1.2rem;
 	}
 
@@ -401,10 +402,12 @@ img, svg {
 		flex-flow: row wrap;
 		margin: 0;
 		padding: 0;
+		padding-bottom: 8px;
 	}
 
 	.scrollspacer {
 		padding: 0;
+		height: unset;
 	}
 
 	.index.item.container {
@@ -416,4 +419,21 @@ img, svg {
 	.index.thumb {
 		height: unset;
 	}
+
+	/* Single */
+	#kinkajou-gallery {
+		height: unset;
+	}
+	.single { padding: 0; }
+	.single.flex {
+		flex-flow: column nowrap;
+	}
+
+	.single.flex > div {
+		width: 100%;
+		height: fit-content;
+		padding: 16px 12px 16px 12px;
+	}
+	div.single.text { padding-top: 8px; }
+	div.single.gallery:last-of-type { padding-bottom: 20px; }
 }
