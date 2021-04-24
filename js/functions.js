@@ -57,7 +57,7 @@ for (e of document.getElementsByClassName("wrapper horizontal")) {
 for (e of document.getElementsByClassName("single text")) {
 		e.onclick = function(){
 				for (e of document.getElementsByClassName("wrapper horizontal")) {
-						if (e.contains(this)) {
+						if (e.contains(this) && window.innerWidth >= 980) {
 								e.classList.toggle("locked");
 						}
 				}

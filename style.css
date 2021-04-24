@@ -290,6 +290,8 @@ img, svg {
 		font-size: 10px;
 	}
 
+	p { font-size: 1.4rem; }
+
 	/* Title, Menu and General layout */
 	#title a {
 		display: inline-block;
@@ -346,6 +348,9 @@ img, svg {
 		margin: 24px;
 		margin-top: 0;
 		font-size: 1.2rem;
+	}
+	.wide {
+		width: unset !important;
 	}
 
 	/* Sidenav becomes the mobile menu */
