@@ -1,7 +1,11 @@
 /* Collapse posts menu in sidenav */
 document.getElementById("sidenav-button").onclick = function () {
-	document.getElementById("sidenav-collapsible").classList.toggle("expanded");
-	this.classList.toggle("expanded");
+	if (window.innerWidth >= 980) {
+		document.getElementById("sidenav-collapsible").classList.toggle("expanded");
+		this.classList.toggle("expanded");
+	} else {
+		window.location = "index.php";
+	}
 }
 
 /* Mobile Layout Menu Button */
