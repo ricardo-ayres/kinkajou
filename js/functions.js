@@ -35,7 +35,7 @@ isLinkToCurrentPage();
 /* Scroll gallery images into view when clicked */
 galimgs = document.getElementsByClassName("gallery image");
 for (i of galimgs) {
-		i.onclick = function() {this.scrollIntoView({behavior: 'smooth', inline: 'center'})};
+		i.onclick = function() {this.scrollIntoView({behavior: 'smooth', block: 'center', inline: 'center'})};
 }
 
 /* Scroll gallery and index horizontally */
