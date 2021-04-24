@@ -266,6 +266,7 @@ img, svg {
 .single.gallery {
 	padding: 20px 40px;
 }
+.single.gallery img { height: 100%;}
 
 .single.gallery:hover {
 	cursor: pointer;
@@ -432,11 +433,17 @@ img, svg {
 
 	.single.flex > div {
 		width: 100%;
-		height: fit-content;
+		height: 100%;
 		padding: 16px 12px 16px 12px;
 	}
 	div.single.text { padding-top: 8px; }
-	div.single.gallery:last-of-type { padding-bottom: 20px; }
+	div.single.gallery:last-of-type {
+		padding-bottom: 20px;
+	}
+    
+    .single.gallery img {
+    	height: auto;
+    }
 
 	/* Page */
 	.page.content {
