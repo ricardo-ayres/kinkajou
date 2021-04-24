@@ -32,6 +32,8 @@ html {
 hr {
 	border-top: 1px solid black;
 	border-bottom: 7px solid #0000;
+	border-left: 0;
+	border-right: 0;
 }
 
 p {
