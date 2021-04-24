@@ -277,6 +277,7 @@ img, svg {
 	padding: 40px;
 	overflow-y: auto;
 }
+
 .page.content img {
 	width: 100%;
 }
@@ -436,4 +437,17 @@ img, svg {
 	}
 	div.single.text { padding-top: 8px; }
 	div.single.gallery:last-of-type { padding-bottom: 20px; }
+
+	/* Page */
+	.page.content {
+		width: 100%;
+		padding: 8px 12px 20px;
+	}
+	.page.content > p {
+		margin-bottom: 1.6rem;
+	}
+
+	.page.title {
+		margin-bottom: 24px;
+	}
 }
