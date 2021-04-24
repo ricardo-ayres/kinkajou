@@ -290,12 +290,16 @@ img, svg {
 		font-size: 10px;
 	}
 
-	p { font-size: 1.4rem; }
+	p { font-size: 1.6rem; }
+	h1 { font-size: 2.4rem; }
 
 	/* Title, Menu and General layout */
-	#title a {
-		display: inline-block;
+	#home {
+		display: block;
 		width: min-content;
+		font-size: 2.4rem;
+		line-height: 102.4%;
+		height: 100%;
 	}
 
 	#title-button {
@@ -303,12 +307,12 @@ img, svg {
 		width: 32px;
 		height: 32px;
 		padding: 4px;
-		margin: 4px;
+		margin: 8px 4px;
 	}
 
 	#title {
 		position: fixed;
-		padding: 32px 24px;
+		padding: 24px;
 		top: 0;
 		margin: 0;
 		text-align: left;
@@ -316,7 +320,7 @@ img, svg {
 		background-color: white;
 		display: grid;
 		grid-template-columns: auto max-content;
-		grid-template-rows: 40px;
+		grid-template-rows: auto;
 	}
 
 	#main {
@@ -347,8 +351,10 @@ img, svg {
 		text-align: center;
 		margin: 24px;
 		margin-top: 0;
-		font-size: 1.2rem;
 	}
+
+	#footer > p { font-size: 1.4rem; }
+
 	.wide {
 		width: unset !important;
 	}
@@ -389,7 +395,7 @@ img, svg {
 	}
 
 	.sidenav.posts.item {
-		font-size: 1.4rem;
+		font-size: 1.6rem;
 		margin: 12px 0;
 	}
 
