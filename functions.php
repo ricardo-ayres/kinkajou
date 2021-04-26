@@ -76,6 +76,10 @@ function kinkajou_get_sidenav_navlinks() {
 	}
 }
 
+function kinkajou_get_footer_text() {
+	return html_entity_decode(get_option('sidenav_footer_text'));
+}
+
 /* Theme Settings in Admin Panel */
 function kinkajou_settings() {
 ?>
@@ -107,6 +111,9 @@ function kinkajou_settings_fields() {
 
 	add_settings_field("sidenav_navlinks", "Sidenav page slugs", "display_sidenav_navlinks", "kinkajou-settings-page", "sidenav");
 	register_setting("sidenav_group", "sidenav_navlinks");
+
+	add_settings_field("sidenav_footer_text", "Sidenav footer text", "display_sidenav_footer_text", "kinkajou-settings-page", "sidenav");
+	register_setting("sidenav_group", "sidenav_footer_text");
 }
 
 function display_sidenav_list_label() {
@@ -127,6 +134,11 @@ function display_sidenav_navlinks() {
 <?php
 }
 
+function display_sidenav_footer_text() {
+?>
+	<input type="text" name="sidenav_footer_text" id="sidenav_footer_text" value="<?= htmlspecialchars(get_option('sidenav_footer_text')); ?>" />
+<?php
+}
 
 add_action('admin_init', 'kinkajou_settings_fields');
 add_action('admin_menu', 'kinkajou_add_settings_page');

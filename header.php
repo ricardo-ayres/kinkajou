@@ -24,7 +24,7 @@
 <!-- site tagline -->
 <div id="footer">
 	<hr/>
-	<p><?= html_entity_decode(get_bloginfo('description')); ?></p>
+	<p><?= kinkajou_get_footer_text(); ?></p>
 </div>
 
 <!-- wrapper for all content -->
