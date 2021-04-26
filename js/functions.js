@@ -4,7 +4,7 @@ document.getElementById("sidenav-button").onclick = function () {
 		document.getElementById("sidenav-collapsible").classList.toggle("expanded");
 		this.classList.toggle("expanded");
 	} else {
-		window.location = "index.php";
+		window.location = "/";
 	}
 }
 
