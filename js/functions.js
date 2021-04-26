@@ -70,7 +70,7 @@ for (e of document.getElementsByClassName("single text")) {
 }
 
 /* I don't agree with this personally, but this disables img right-click */
-allimgs = document.getElementsByTagName("img");
+/* allimgs = document.getElementsByTagName("img");
 for (i of allimgs) {
 	i.oncontextmenu = function() { return false; };
-}
+} */
