@@ -68,9 +68,3 @@ for (e of document.getElementsByClassName("single text")) {
 				this.classList.toggle("wide");
 		};
 }
-
-/* I don't agree with this personally, but this disables img right-click */
-/* allimgs = document.getElementsByTagName("img");
-for (i of allimgs) {
-	i.oncontextmenu = function() { return false; };
-} */
